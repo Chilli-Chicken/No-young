@@ -1,0 +1,23 @@
+server:
+  port: 8086
+  context-path: /zhgl_web_server
+  uri-encoding: UTF-8
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.0.186:3307/pipe_gallery_5km
+    username: root
+    password: 1234
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: LEGACYHTML5
+    encoding: UTF-8
+    content-type: text/html
+    cache: false

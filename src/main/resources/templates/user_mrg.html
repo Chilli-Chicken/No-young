@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<html lang="en">-->
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!-- Required meta tags -->
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title>Elektron - Bootstrap 4</title>
+
+		<link th:href="@{bootstrap/dist/css/bootstrap.min.css}" rel="stylesheet" />
+		<link th:href="@{common/css/metisMenu.min.css}" rel="stylesheet" />
+		<link th:href="@{common/css/onoffcanvas.min.css}" rel="stylesheet" />
+		<link th:href="@{common/css/elektron.css}" rel="stylesheet" />
+		<link th:href="@{common/css/bs4-demo.css}" rel="stylesheet" />
+		<link th:href="@{bootstrap/validator/css/bootstrapValidator.min.css}" rel="stylesheet" />
+
+		<!--<link rel="stylesheet" href="../static/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../static/common/css/metisMenu.min.css">
+		<link rel="stylesheet" href="../static/common/css/onoffcanvas.min.css">
+		<link rel="stylesheet" href="../static/common/css/elektron.css">
+		<link rel="stylesheet" href="../static/common/css/bs4-demo.css">
+		<link rel="stylesheet" href="../static/bootstrap/validator/css/bootstrapValidator.min.css">-->
+
+		<script th:inline="javascript">
+            var username = [[${session.userName}]];
+            if(!username) {
+                alert("请重新登录！");
+                window.location.href = "/zhgl_web_server/login";
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<!-- BEGIN .app -->
+		<div class="app">
+			<!-- BEGIN .app-wrap -->
+			<div class="app-wrap">
+				<!-- BEGIN .app-heading -->
+				<header class="app-heading is-sticky is-open" style="background: #2A373E;">
+					<!--<nav class="navbar sticky-top navbar-toggleable-md">
+						<span>
+			            <a href="http://elk.onokumus.com/bs4.html#app-side" data-toggle="onoffcanvas" class="onoffcanvas-toggler" aria-expanded="true"></a>
+			        </span>-->
+					<nav class="navbar sticky-top navbar-toggleable-md">
+						<a class="navbar-brand" href="#" style="color: #9d9d9d;">智慧管廊后台管理系统</a>
+						<a class="navbar-brand" href="login.html" style="color: #9d9d9d;float: right;font-size: 15px;">退出系统</a>
+					</nav>
+				</header>
+				<!-- END:  .app-heading -->
+
+				<!-- BEGIN .app-container -->
+				<div class="app-container">
+
+					<!-- BEGIN .app-side -->
+					<aside class="app-side side-inverse onoffcanvas is-left is-open" id="app-side" aria-expanded="true">
+
+						<!-- BEGIN .side-content -->
+						<div class="side-content is-sticky" style="top: 57px;">
+							<!-- BEGIN .side-nav -->
+							<nav class="side-nav">
+
+								<!-- BEGIN: side-nav-content -->
+								<ul class="metismenu" id="metismenu">
+
+									<li>
+										<a class="" href="/zhgl_web_server/userInfo" aria-expanded="false">
+											<span class="has-icon">
+						                      <i class="fa fa-cogs"></i>
+						                    </span>
+											<span class="nav-title">用户管理</span>
+										</a>
+									</li>
+
+									<li class="">
+										<a href="#" class="has-arrow" aria-expanded="false">
+											<span class="has-icon">
+						                      <i class="fa fa-html5"></i>
+						                    </span>
+											<span class="nav-title">联动值管理</span>
+										</a>
+										<ul aria-expanded="false" class="collapse" style="height: 0px;">
+											<li>
+												<a href="/zhgl_web_server/device/1">ACU1</a>
+											</li>
+											<li>
+												<a href="/zhgl_web_server/device/2">ACU2</a>
+											</li>
+											<li>
+												<a href="/zhgl_web_server/device/3">ACU3</a>
+											</li>
+											<li>
+												<a href="/zhgl_web_server/device/4">ACU4</a>
+											</li>
+											<li>
+												<a href="/zhgl_web_server/device/5">ACU5</a>
+											</li>
+											<li>
+												<a href="/zhgl_web_server/device/6">ACU6</a>
+											</li>
+											<li>
+												<a href="/zhgl_web_server/device/7">ACU7</a>
+											</li>
+											<li>
+												<a href="/zhgl_web_server/device/8">ACU8</a>
+											</li>
+											<li>
+												<a href="/zhgl_web_server/device/9">ACU9</a>
+											</li>
+											<li>
+												<a href="/zhgl_web_server/device/10">ACU10</a>
+											</li>
+											<li>
+												<a href="/zhgl_web_server/device/11">ACU11</a>
+											</li>
+											<li>
+												<a href="/zhgl_web_server/device/12">ACU12</a>
+											</li>
+											<li>
+												<a href="/zhgl_web_server/device/13">ACU13</a>
+											</li>
+										</ul>
+									</li>
+
+									<li>
+									<a class="" href="http://47.94.19.94:8080/history/alarmFolw.html" aria-expanded="false">
+											<span class="has-icon">
+						                      <i class="fa fa-cogs"></i>
+						                    </span>
+										<span class="nav-title">历史数据</span>
+									</a>
+								</li>
+								</ul>
+								<!-- END: side-nav-content -->
+							</nav>
+							<!-- END: .side-nav -->
+						</div>
+						<!-- END: .side-content -->
+					</aside>
+					<!-- END: .app-side -->
+
+					<!-- BEGIN .app-main -->
+					<div class="app-main">
+						<!-- BEGIN .main-heading -->
+						<header class="main-heading">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item">
+									<a href="#">用户管理</a>
+								</li>
+								<!--<li class="breadcrumb-item active">Bootstrap 4</li>-->
+							</ol>
+						</header>
+						<!-- END: .main-heading -->
+						<!-- BEGIN .main-content -->
+						<div class="main-content">
+							<button type="button" class="btn btn-primary btn-sm addUser" style="float: right; margin-right: 30px;margin-bottom: 20px;">添加用户</button>
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th>用户名</th>
+										<th>权限</th>
+										<th>创建时间</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="userInfo : ${userInfoList}">
+									　　<td th:text="${userInfo.userName}">userName</td>
+									　　<td th:text="${userInfo.role == '0'}? '监控员' : '管理员'">role</td>
+									　　<td th:text="${userInfo.createTime}">createTime</td>
+									　　<td>
+											<button type="button" class="btn btn-warning btn-sm editUser" th:value="${userInfo.id}">修改</button>
+											<button type="button" class="btn btn-danger btn-sm deleteUser" th:value="${userInfo.id}">删除</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!--<div>-->
+								<!--<ul class="pagination" style="float: right;">-->
+									<!--<li class="page-item"><a class="page-link" href="#">Previous</a></li>-->
+									<!--<li class="page-item"><a class="page-link" href="#">1</a></li>-->
+									<!--<li class="page-item active"><a class="page-link" href="#">2</a></li>-->
+									<!--<li class="page-item"><a class="page-link" href="#">3</a></li>-->
+									<!--<li class="page-item"><a class="page-link" href="#">Next</a></li>-->
+								<!--</ul>-->
+							<!--</div>-->
+						</div>
+						<!-- END: .main-content -->
+					</div>
+					<!-- END: .app-main -->
+				</div>
+				<!-- END: .app-container -->
+			</div>
+			<!-- END: .app-wrap -->
+		</div>
+		<!-- END: .app -->
+
+		<!-- START EDIT PAGE -->
+		<div class="modal fade" id="myModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<!-- 模态框头部 -->
+					<div class="modal-header">
+						<h6 class="modal-title" style="float: left;">添加用户</h6>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<!-- 模态框主体 -->
+					<form id="userForm">
+						<input type="hidden" class="form-control" id="id" name="id">
+						<div class="modal-body">
+							<div class="form-group">
+								<label for="userName">用户名:</label>
+								<input type="text" class="form-control" id="userName" name="userName" placeholder="Enter user name">
+							</div>
+							<div class="form-group">
+								<label for="pwd">密码:</label>
+								<input type="password" class="form-control" id="pwd" name="pwd" placeholder="Enter password">
+							</div>
+							<div class="form-group">
+								<label for="role">权限:</label>
+								<select class="form-control" id="role" name="role">
+									<option value="0">监控员</option>
+									<option value="1">管理员</option>
+								</select>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-info">保存</button>
+							<button type="button" class="btn btn-info" data-dismiss="modal">关闭</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- END EDIT PAGE -->
+
+		<!-- jQuery first, then Tether, then other JS. -->
+		<script th:src="@{common/js/jquery.min.js}"></script>
+		<script th:src="@{bootstrap/assets/js/vendor/tether.min.js}"></script>
+		<script th:src="@{bootstrap/dist/js/bootstrap.min.js}"></script>
+		<script th:src="@{common/js/metisMenu.min.js}"></script>
+		<script th:src="@{common/js/onoffcanvas.min.js}"></script>
+		<script th:src="@{common/js/elektron.js}"></script>
+		<script th:src="@{biz/user_mrg.js}"></script>
+		<script th:src="@{bootstrap/validator/js/bootstrapValidator.min.js}"></script>
+
+		<!--<script src="../static/common/js/jquery.min.js" charset="utf-8"></script>
+		<script src="../static/bootstrap/assets/js/vendor/tether.min.js"></script>
+		<script src="../static/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="../static/common/js/metisMenu.min.js" charset="utf-8"></script>
+		<script src="../static/common/js/onoffcanvas.min.js" charset="utf-8"></script>
+		<script src="../static/common/js/elektron.js" charset="utf-8"></script>
+		<script src="../static/user_mrg/user_mrg.js" charset="utf-8"></script>
+		<script src="../static/bootstrap/validator/js/bootstrapValidator.min.js" charset="utf-8"></script>-->
+
+	</body>
+
+</html>

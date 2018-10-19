@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<html lang="en">-->
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!-- Required meta tags -->
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Elektron - Bootstrap 4</title>
+
+	<link th:href="@{/bootstrap/dist/css/bootstrap.min.css}" rel="stylesheet" />
+	<link th:href="@{/common/css/metisMenu.min.css}" rel="stylesheet" />
+	<link th:href="@{/common/css/onoffcanvas.min.css}" rel="stylesheet" />
+	<link th:href="@{/common/css/elektron.css}" rel="stylesheet" />
+	<link th:href="@{/common/css/bs4-demo.css}" rel="stylesheet" />
+	<link th:href="@{/bootstrap/validator/css/bootstrapValidator.min.css}" rel="stylesheet" />
+
+	<!--<link rel="stylesheet" href="../static/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/common/css/metisMenu.min.css">
+    <link rel="stylesheet" href="../static/common/css/onoffcanvas.min.css">
+    <link rel="stylesheet" href="../static/common/css/elektron.css">
+    <link rel="stylesheet" href="../static/common/css/bs4-demo.css">
+    <link rel="stylesheet" href="../static/bootstrap/validator/css/bootstrapValidator.min.css">-->
+	<script th:inline="javascript">
+        var username = [[${session.userName}]];
+        if(!username) {
+            alert("请重新登录！");
+            window.location.href = "/zhgl_web_server/login";
+        }
+	</script>
+</head>
+
+<body>
+<!-- BEGIN .app -->
+<div class="app">
+	<!-- BEGIN .app-wrap -->
+	<div class="app-wrap">
+		<!-- BEGIN .app-heading -->
+		<header class="app-heading is-sticky is-open" style="background: #2A373E;">
+			<!--<nav class="navbar sticky-top navbar-toggleable-md">
+                <span>
+                <a href="http://elk.onokumus.com/bs4.html#app-side" data-toggle="onoffcanvas" class="onoffcanvas-toggler" aria-expanded="true"></a>
+            </span>-->
+			<nav class="navbar sticky-top navbar-toggleable-md">
+				<a class="navbar-brand" href="#" style="color: #9d9d9d;">智慧管廊后台管理系统</a>
+				<a class="navbar-brand" href="login.html" style="color: #9d9d9d;float: right;font-size: 15px;">退出系统</a>
+			</nav>
+		</header>
+		<!-- END:  .app-heading -->
+
+		<!-- BEGIN .app-container -->
+		<div class="app-container">
+
+			<!-- BEGIN .app-side -->
+			<aside class="app-side side-inverse onoffcanvas is-left is-open" id="app-side" aria-expanded="true">
+
+				<!-- BEGIN .side-content -->
+				<div class="side-content is-sticky" style="top: 57px;">
+					<!-- BEGIN .side-nav -->
+					<nav class="side-nav">
+
+						<!-- BEGIN: side-nav-content -->
+						<ul class="metismenu" id="metismenu">
+
+							<li>
+								<a class="" href="/zhgl_web_server/userInfo" aria-expanded="false">
+											<span class="has-icon">
+						                      <i class="fa fa-cogs"></i>
+						                    </span>
+									<span class="nav-title">用户管理</span>
+								</a>
+							</li>
+
+							<li class="">
+								<a href="#" class="has-arrow" aria-expanded="false">
+											<span class="has-icon">
+						                      <i class="fa fa-html5"></i>
+						                    </span>
+									<span class="nav-title">联动值管理</span>
+								</a>
+								<ul aria-expanded="false" class="collapse" style="height: 0px;">
+									<li>
+										<a href="/zhgl_web_server/device/1">ACU1</a>
+									</li>
+									<li>
+										<a href="/zhgl_web_server/device/2">ACU2</a>
+									</li>
+									<li>
+										<a href="/zhgl_web_server/device/3">ACU3</a>
+									</li>
+									<li>
+										<a href="/zhgl_web_server/device/4">ACU4</a>
+									</li>
+									<li>
+										<a href="/zhgl_web_server/device/5">ACU5</a>
+									</li>
+									<li>
+										<a href="/zhgl_web_server/device/6">ACU6</a>
+									</li>
+									<li>
+										<a href="/zhgl_web_server/device/7">ACU7</a>
+									</li>
+									<li>
+										<a href="/zhgl_web_server/device/8">ACU8</a>
+									</li>
+									<li>
+										<a href="/zhgl_web_server/device/9">ACU9</a>
+									</li>
+									<li>
+										<a href="/zhgl_web_server/device/10">ACU10</a>
+									</li>
+									<li>
+										<a href="/zhgl_web_server/device/11">ACU11</a>
+									</li>
+									<li>
+										<a href="/zhgl_web_server/device/12">ACU12</a>
+									</li>
+									<li>
+										<a href="/zhgl_web_server/device/13">ACU13</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<!-- END: side-nav-content -->
+					</nav>
+					<!-- END: .side-nav -->
+				</div>
+				<!-- END: .side-content -->
+			</aside>
+			<!-- END: .app-side -->
+
+			<!-- BEGIN .app-main -->
+			<div class="app-main">
+				<!-- BEGIN .main-heading -->
+				<header class="main-heading">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item">
+							<a href="#">联动值管理</a>
+						</li>
+						<li class="breadcrumb-item active"><span th:text="${acuCode}">ACU</span></li>
+					</ol>
+				</header>
+				<!-- END: .main-heading -->
+				<!-- BEGIN .main-content -->
+				<div class="main-content">
+					<!--<p style="text-align: right;">-->
+					<!--<button type="button" class="btn btn-link">查看当前联动值状态</button>-->
+					<!--</p>-->
+					<h6>风机联动值</h6>
+					<hr>
+					<form id="fdForm">
+						<input type="hidden" th:value="${acuNum}" name="acu">
+						<div class="form-inline" style="padding-bottom: 10px;">
+							<label>温度上限设置:</label>
+							<input type="text" class="form-control" size="10" th:placeholder="${normMap.VD812}" name="VD812">
+							<label>温度下限设置:</label>
+							<input type="text" class="form-control" size="10" th:placeholder="${normMap.VD816}" name="VD816">
+							<label>外界温度设置:</label>
+							<input type="text" class="form-control" size="10" th:placeholder="${normMap.VD820}" name="VD820">
+						</div>
+						<div class="form-inline" style="padding-bottom: 10px;">
+							<label>湿度上限设置:</label>
+							<input type="text" class="form-control" size="10" th:placeholder="${normMap.VD824}" name="VD824">
+							<label>湿度下限设置:</label>
+							<input type="text" class="form-control" size="10" th:placeholder="${normMap.VD828}" name="VD828">
+							<label>外界湿度设置:</label>
+							<input type="text" class="form-control" size="10" th:placeholder="${normMap.VD832}" name="VD832">
+						</div>
+						<div class="form-inline" style="padding-bottom: 10px;">
+							<label>O2上限设置:</label>
+							<input type="text" class="form-control" size="10" th:placeholder="${normMap.VD836}" name="VD836">
+							<label>O2下限设置:</label>
+							<input type="text" class="form-control" size="10" th:placeholder="${normMap.VD840}" name="VD840">
+						</div>
+						<div class="form-inline" style="padding-bottom: 10px;">
+							<label>CH4上限设置:</label>
+							<input type="text" class="form-control" size="10" th:placeholder="${normMap.VD844}" name="VD844">
+							<label>CH4下限设置:</label>
+							<input type="text" class="form-control" size="10" th:placeholder="${normMap.VD848}" name="VD848">
+						</div>
+						<div class="form-inline" style="padding-bottom: 10px;">
+							<label>H2S上限设置:</label>
+							<input type="text" class="form-control" size="10" th:placeholder="${normMap.VD852}" name="VD852">
+							<label>H2S下限设置:</label>
+							<input type="text" class="form-control" size="10" th:placeholder="${normMap.VD856}" name="VD856">
+						</div>
+						<button type="submit" class="btn btn-info">保存</button>
+					</form>
+
+					<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="100%" color=#987cb9 SIZE=3>
+					<h6>水泵联动值</h6>
+					<hr>
+					<form id="pdForm">
+						<input type="hidden" th:value="${acuNum}" name="acu">
+						设备编号：27PD01
+						<div class="form-inline" style="padding-bottom: 10px;">
+							<label>水池停泵液位:</label>
+							<input type="text" class="form-control" size="10" th:placeholder="${normMap.VD612}" name="VD612">
+							<label>水池启动单泵液位:</label>
+							<input type="text" class="form-control" size="10" th:placeholder="${normMap.VD616}" name="VD616">
+							<label>水池启动双泵液位:</label>
+							<input type="text" class="form-control" size="10" th:placeholder="${normMap.VD620}" name="VD620">
+						</div>
+						设备编号：28PD01
+						<div class="form-inline" style="padding-bottom: 10px;">
+							<label>水池停泵液位:</label>
+							<input type="text" class="form-control" size="10" th:placeholder="${normMap.VD644}" name="VD644">
+							<label>水池启动单泵液位:</label>
+							<input type="text" class="form-control" size="10" th:placeholder="${normMap.VD648}" name="VD648">
+							<label>水池启动双泵液位:</label>
+							<input type="text" class="form-control" size="10" th:placeholder="${normMap.VD652}" name="VD652">
+						</div>
+						设备编号：28PD02
+						<div class="form-inline" style="padding-bottom: 10px;">
+							<label>水池停泵液位:</label>
+							<input type="text" class="form-control" size="10" th:placeholder="${normMap.VD676}" name="VD676">
+							<label>水池启动单泵液位:</label>
+							<input type="text" class="form-control" size="10" th:placeholder="${normMap.VD680}" name="VD680">
+							<label>水池启动双泵液位:</label>
+							<input type="text" class="form-control" size="10" th:placeholder="${normMap.VD684}" name="VD684">
+						</div>
+						<button type="submit" class="btn btn-info">保存</button>
+					</form>
+						<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="100%" color=#987cb9 SIZE=3>
+						<h6>清零操作</h6>
+
+						<hr>
+						照明
+						<div class="form-inline" style="padding-bottom: 10px;">
+							设备编号：MI_27ZM_1_T_clear<button type="button" class="btn btn-primary" acu="12" key="V1300.0">累计运行时间清零</button>
+						</div>
+						<div class="form-inline" style="padding-bottom: 10px;">
+							设备编号：MI_27ZM_2_T_clear<button type="button" class="btn btn-primary" acu="12" key="V1300.1">累计运行时间清零</button>
+						</div>
+						<div class="form-inline" style="padding-bottom: 10px;">
+							设备编号：MI_28ZM_1_T_clear<button type="button" class="btn btn-primary" acu="12" key="V1300.2">累计运行时间清零</button>
+						</div>
+						<div class="form-inline" style="padding-bottom: 10px;">
+							设备编号：MI_28ZM_2_T_clear<button type="button" class="btn btn-primary" acu="12" key="V1300.3">累计运行时间清零</button>
+						</div>
+						<div class="form-inline" style="padding-bottom: 10px;">
+							设备编号：MI_PEPS19_T_clear<button type="button" class="btn btn-primary" acu="12" key="V1361.4">累计运行时间清零</button>
+						</div>
+						<div class="form-inline" style="padding-bottom: 10px;">
+							设备编号：MI_PEPS20_T_clear<button type="button" class="btn btn-primary" acu="12" key="V1361.5">累计运行时间清零</button>
+						</div>
+						<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="100%" color=#987cb9 SIZE=3>
+				</div>
+				<!-- END: .main-content -->
+			</div>
+			<!-- END: .app-main -->
+		</div>
+		<!-- END: .app-container -->
+	</div>
+	<!-- END: .app-wrap -->
+</div>
+<!-- END: .app -->
+
+<!-- jQuery first, then Tether, then other JS. -->
+<script th:src="@{/common/js/jquery.min.js}"></script>
+<script th:src="@{/common/js/jquery.form.js}"></script>
+<script th:src="@{/bootstrap/assets/js/vendor/tether.min.js}"></script>
+<script th:src="@{/bootstrap/dist/js/bootstrap.min.js}"></script>
+<script th:src="@{/common/js/metisMenu.min.js}"></script>
+<script th:src="@{/common/js/onoffcanvas.min.js}"></script>
+<script th:src="@{/common/js/elektron.js}"></script>
+<script th:src="@{/bootstrap/validator/js/bootstrapValidator.min.js}"></script>
+<script th:src="@{/biz/device_acu.js}"></script>
+
+<!--<script src="../static/common/js/jquery.min.js" charset="utf-8"></script>
+<script src="../static/bootstrap/assets/js/vendor/tether.min.js"></script>
+<script src="../static/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../static/common/js/metisMenu.min.js" charset="utf-8"></script>
+<script src="../static/common/js/onoffcanvas.min.js" charset="utf-8"></script>
+<script src="../static/common/js/elektron.js" charset="utf-8"></script>
+<script src="../static/user_mrg/user_mrg.js" charset="utf-8"></script>
+<script src="../static/bootstrap/validator/js/bootstrapValidator.min.js" charset="utf-8"></script>-->
+
+</body>
+
+</html>

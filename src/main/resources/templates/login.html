@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <link rel="icon" href="../../favicon.ico"/>
+
+    <title>智慧管廊后台管理系统</title>
+
+    <link th:href="@{bootstrap/dist/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{common/css/signin.css}" rel="stylesheet"/>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <form class="form-signin">
+        <h3 class="form-signin-heading">智慧管廊后台管理系统</h3>
+        <input type="text" id="userName" name="userName" class="form-control" placeholder="用户名">
+        <input type="password" id="password" name="password" class="form-control" placeholder="密码">
+        <button class="btn btn-lg btn-primary btn-block" id="login">登录</button>
+    </form>
+
+</div> <!-- /container -->
+
+<script th:src="@{common/js/jquery.min.js}"></script>
+<script th:src="@{biz/login.js}"></script>
+
+</body>
+</html>
